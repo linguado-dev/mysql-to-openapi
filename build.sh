@@ -2,8 +2,8 @@
 
 
 HERE="$(pwd)"
-NAME="$(basename ${HERE})"
+NAME="mysql-to-openapi"
 
-if [ ! "${NAME}" = "mysql-to-openapi" ]; then echo "Run this script from the mysql-to-openapi project root." && exit 1; fi
+if [ ! "$(basename "${HERE}")" = "${NAME}" ]; then echo "Run this script from the ${NAME} project root." && exit 1; fi
 
 docker build -t "${NAME}" .
